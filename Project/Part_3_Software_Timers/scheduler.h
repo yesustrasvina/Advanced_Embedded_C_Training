@@ -9,10 +9,10 @@
 
 typedef struct task
 {
-    uint32_t period;          /*How often the task shopud run in ms*/
+    uint32_t period;          /*How often the task should run in ms*/
     uint32_t elapsed;         /*the current elapsed time*/
-    uint8_t running;
-    uint8_t stop;
+    uint8_t running;          /*Running flag*/
+    uint8_t stop;             /*Stop flag*/
     void (*initFunc)(void);   /*pointer to init task function*/
     void (*taskFunc)(void);   /*pointer to task function*/
 }Task_TypeDef;
