@@ -1,5 +1,6 @@
 {
     "files.associations": {
-        "scheduler.h": "c"
+        "scheduler.h": "c",
+        "rtcc.h": "c"
     }
 }

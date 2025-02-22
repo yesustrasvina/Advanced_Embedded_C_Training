@@ -27,6 +27,11 @@ typedef struct _AppRtcc_Clock
     AppRtcc_Ctrl ctrl;      /*!< clock control bits */
 } AppRtcc_Clock;
 
+/*  Interface to initialize the internal clock structure */
 void AppRtcc_clockInit( AppRtcc_Clock *rtcc );
 
+/* Interface to set a new time */
 uint8_t AppRtcc_setTime( AppRtcc_Clock *rtcc, uint8_t hour, uint8_t minutes, uint8_t seconds );
+
+/* Interface to set a new date */
+uint8_t AppRtcc_setDate( AppRtcc_Clock *rtcc, uint8_t day, uint8_t month, uint16_t year );
