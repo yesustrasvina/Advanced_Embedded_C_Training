@@ -3,6 +3,8 @@
 #include <stdint.h>
 #include <time.h>
 #include <string.h>
+#ifndef SCHEDULER_H
+#define SCHEDULER_H
 
 #define FALSE 0
 #define TRUE 1
@@ -61,7 +63,7 @@ void HIL_SCHEDULER_StartScheduler( Scheduler_HandleTypeDef *hscheduler );
 long milliseconds( void );
 
 /* Function to run every task of scheduler */
-void runtask(Scheduler_HandleTypeDef *hscheduler);
+void runTask(Scheduler_HandleTypeDef *hscheduler);
 
 /* Function to run Initialization functions */
 void runInit(Scheduler_HandleTypeDef *hscheduler);
@@ -86,3 +88,4 @@ uint8_t HIL_SCHEDULER_StopTimer( Scheduler_HandleTypeDef *hscheduler, uint8_t ti
 /* Decrement timer after every tick */
 void runTimer (Scheduler_HandleTypeDef *hscheduler);
 
+#endif

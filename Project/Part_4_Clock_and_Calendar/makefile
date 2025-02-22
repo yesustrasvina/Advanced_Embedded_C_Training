@@ -5,3 +5,6 @@ all:
 	@ gcc -c queue.c -o queue.o
 	@ gcc scheduler.o main.o Rtcc.o queue.o -o Rtcc
 	@ ./Rtcc
+
+clean:
+	@ rm scheduler.o main.o Rtcc.o queue.o Rtcc 

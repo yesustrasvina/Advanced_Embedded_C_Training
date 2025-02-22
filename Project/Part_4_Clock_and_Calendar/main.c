@@ -18,7 +18,7 @@ typedef struct
 #define TICK_VAL    100
 static Task_TypeDef tasks[ TASKS_N ];
 static Scheduler_HandleTypeDef Sche;
-static AppRtcc_Clock rtccClock;
+static AppRtcc_Rtcc rtccClock;
 static QUEUE_HandleTypeDef rtccQueue;
 void Init_500ms(void);
 void Init_1000ms(void);
