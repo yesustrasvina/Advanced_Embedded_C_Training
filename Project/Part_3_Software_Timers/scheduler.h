@@ -38,6 +38,8 @@ typedef struct scheduler
 }Scheduler_HandleTypeDef;
 
 
+
+
 /****************** Scheduler functions ******************/
 /* Initialization function */
 void HIL_SCHEDULER_InitScheduler( Scheduler_HandleTypeDef *hscheduler );
@@ -61,7 +63,7 @@ void HIL_SCHEDULER_StartScheduler( Scheduler_HandleTypeDef *hscheduler );
 long milliseconds( void );
 
 /* Function to run every task of scheduler */
-void runtask(Scheduler_HandleTypeDef *hscheduler);
+void runTask(Scheduler_HandleTypeDef *hscheduler);
 
 /* Function to run Initialization functions */
 void runInit(Scheduler_HandleTypeDef *hscheduler);

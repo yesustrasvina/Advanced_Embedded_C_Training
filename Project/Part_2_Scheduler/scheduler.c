@@ -19,7 +19,7 @@ uint8_t HIL_SCHEDULER_RegisterTask( Scheduler_HandleTypeDef *hscheduler, void (*
         hscheduler->taskPtr[hscheduler->tasksCount].initFunc = initPtr;
         hscheduler->taskPtr[hscheduler->tasksCount].taskFunc = taskPtr;
         hscheduler->taskPtr[hscheduler->tasksCount].period = period;
-        hscheduler->taskPtr[hscheduler->tasksCount].elapsed = 0; // Period or 0?
+        hscheduler->taskPtr[hscheduler->tasksCount].elapsed = 0; // Period or 0? If period task will enter to scheduler automatically
         hscheduler->taskPtr[hscheduler->tasksCount].running = TRUE;
         hscheduler->taskPtr[hscheduler->tasksCount].stop = FALSE;
         hscheduler->tasksCount++;
@@ -73,25 +73,14 @@ void HIL_SCHEDULER_StartScheduler( Scheduler_HandleTypeDef *hscheduler )
     uint32_t tickstart = milliseconds();
     runInit(hscheduler);
 
-    do
+   while ( tickstart <= hscheduler->timeout )
     {
         if( (milliseconds() - tickstart) >= hscheduler->tick )
         {
-            for (uint8_t i = 0; i < hscheduler->tasksCount; i++)
-            {
-                if(hscheduler->taskPtr[i].running == TRUE && hscheduler->taskPtr[i].stop == FALSE) //Check if its not stopped
-                {
-                    if(hscheduler->taskPtr[i].elapsed >= hscheduler->taskPtr[i].period) // Check if elapsed time is completed
-                    {
-                        hscheduler->taskPtr[i].elapsed = 0; // Reset elapsed time
-                        hscheduler->taskPtr[i].taskFunc(); //Run task
-                    }
-                }
-                hscheduler->taskPtr[i].elapsed += hscheduler->tick;
-            }
+            tickstart = milliseconds(); // Get actual ms
+            runTask(hscheduler); 
         }
-    } while ( (milliseconds() - tickstart) < hscheduler->timeout );
-    
+    } 
 }
 
 void runInit(Scheduler_HandleTypeDef *hscheduler)
@@ -105,6 +94,21 @@ void runInit(Scheduler_HandleTypeDef *hscheduler)
     }
 }
 
+void runTask(Scheduler_HandleTypeDef *hscheduler)
+{
+    for (uint8_t i = 0; i < hscheduler->tasksCount; i++)
+    {
+        if( ((hscheduler->taskPtr[i].running) == TRUE) && ((hscheduler->taskPtr[i].stop) == FALSE) && (hscheduler->tick <= hscheduler->taskPtr[i].period) ) //Check if its not stopped
+        {
+            if(hscheduler->taskPtr[i].elapsed >= hscheduler->taskPtr[i].period) // Check if elapsed time is completed
+            {
+                hscheduler->taskPtr[i].elapsed = 0; // Reset elapsed time
+                hscheduler->taskPtr[i].taskFunc(); //Run task
+            }
+        }
+        hscheduler->taskPtr[i].elapsed += hscheduler->tick;
+    }
+}
 /*********** Test functions ***********/
 void test_HIL_SCHEDULER_InitScheduler(void)
 {

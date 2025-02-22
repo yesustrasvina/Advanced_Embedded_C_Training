@@ -9,7 +9,7 @@
 
 typedef struct task
 {
-    uint32_t period;          /*How often the task shopud run in ms*/
+    uint32_t period;          /*How often the task should run in ms*/
     uint32_t elapsed;         /*the current elapsed time*/
     uint8_t running;
     uint8_t stop;
@@ -49,6 +49,8 @@ void HIL_SCHEDULER_StartScheduler( Scheduler_HandleTypeDef *hscheduler );
 long milliseconds( void );
 
 void runInit(Scheduler_HandleTypeDef *hscheduler);
+
+void runTask(Scheduler_HandleTypeDef *hscheduler);
 
 /*********** Test functions ***********/
 void test_HIL_SCHEDULER_InitScheduler(void);

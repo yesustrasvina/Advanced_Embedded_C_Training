@@ -38,20 +38,21 @@ int main( void )
 
     return 0;
 }
+
 void Init_500ms(void)
 {
-    printf("Init task 500 millisecond");
+    printf("Init task 500 millisecond\n");
 }
 
 void Task_500ms(void)
 {
-    static int loop = 0;
-    //printf("This is a counter from task 500ms: %d", loop++);
+    static int loop = 1;
+    printf("This is a counter from task 500ms: %d\n", loop++);
 }
 
 void Callback(void)
 {
-    static int loop = 0;
-    //printf("This is a counter from timer callback: %d", loop++);
+    static int loop = 1;
+    printf("This is a counter from timer callback: %d\n", loop++);
     HIL_SCHEDULER_StartTimer( &Sche, TimerID );
 }

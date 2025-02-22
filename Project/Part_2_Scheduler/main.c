@@ -22,7 +22,7 @@ int main( void )
     unsigned char TaskID1;
     unsigned char TaskID2;
 
-    /*init the scheduler with two tasks and a tick time of 100ms and run for 5 seconds only*/
+    /*init the scheduler with two tasks and a tick time of 100ms and run for 3 seconds only*/
     Sche.tick = TICK_VAL;
     Sche.tasks = TASKS_N;
     Sche.timeout = 3000;
@@ -48,11 +48,11 @@ void Init_1000ms(void)
 }
 void Task_500ms(void)
 {
-    static int loop = 0;
-    //printf("This is a counter from task 500ms: %d", loop++);
+    static int loop = 1;
+    printf("This is a counter from task 500ms: %d\n", loop++);
 }
 void Task_1000ms(void)
 {
-    static int loop = 0;
-    //printf("This is a counter from task 1000ms: %d", loop++);
+    static int loop = 1;
+    printf("This is a counter from task 1000ms: %d\n", loop++);
 }

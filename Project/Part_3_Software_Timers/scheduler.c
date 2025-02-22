@@ -8,7 +8,6 @@ void HIL_SCHEDULER_InitScheduler( Scheduler_HandleTypeDef *hscheduler )
         hscheduler->taskPtr[i].running = FALSE;
         hscheduler->taskPtr[i].stop = TRUE;
     }
-    
 }
 
 uint8_t HIL_SCHEDULER_RegisterTask( Scheduler_HandleTypeDef *hscheduler, void (*initPtr)(void), void (*taskPtr)(void), uint32_t period )
@@ -19,7 +18,7 @@ uint8_t HIL_SCHEDULER_RegisterTask( Scheduler_HandleTypeDef *hscheduler, void (*
         hscheduler->taskPtr[hscheduler->tasksCount].initFunc = initPtr;
         hscheduler->taskPtr[hscheduler->tasksCount].taskFunc = taskPtr;
         hscheduler->taskPtr[hscheduler->tasksCount].period = period;
-        hscheduler->taskPtr[hscheduler->tasksCount].elapsed = 0; // Period or 0? if period, task will run automatically in scheduler
+        hscheduler->taskPtr[hscheduler->tasksCount].elapsed = 0; 
         hscheduler->taskPtr[hscheduler->tasksCount].running = TRUE;
         hscheduler->taskPtr[hscheduler->tasksCount].stop = FALSE;
         hscheduler->tasksCount++;
@@ -73,15 +72,15 @@ void HIL_SCHEDULER_StartScheduler( Scheduler_HandleTypeDef *hscheduler )
     uint32_t tickstart = milliseconds();
     runInit(hscheduler);
 
-    do
+   while ( tickstart <= hscheduler->timeout )
     {
         if( (milliseconds() - tickstart) >= hscheduler->tick )
         {
-            runTimer(hscheduler);
-            runtask(hscheduler);
+            tickstart = milliseconds(); // Get actual ms
+            runTask(hscheduler); // Run task
+            runTimer(hscheduler); // Run timer
         }
-    } while ( (milliseconds() - tickstart) < hscheduler->timeout );
-    
+    } 
 }
 
 void runInit(Scheduler_HandleTypeDef *hscheduler)
@@ -90,16 +89,16 @@ void runInit(Scheduler_HandleTypeDef *hscheduler)
     {
         if(hscheduler->taskPtr[i].initFunc != NULL)
         {
-            hscheduler->taskPtr[i].initFunc();
+            hscheduler->taskPtr[i].initFunc(); //Run init 
         }
     }
 }
 
-void runtask(Scheduler_HandleTypeDef *hscheduler)
+void runTask(Scheduler_HandleTypeDef *hscheduler)
 {
     for (uint8_t i = 0; i < hscheduler->tasksCount; i++)
     {
-        if(hscheduler->taskPtr[i].running == TRUE && hscheduler->taskPtr[i].stop == FALSE) //Check if its not stopped
+        if( (hscheduler->taskPtr[i].running == TRUE) && (hscheduler->taskPtr[i].stop == FALSE) && (hscheduler->tick <= hscheduler->taskPtr[i].period)) //Check if its not stopped
         {
             if(hscheduler->taskPtr[i].elapsed >= hscheduler->taskPtr[i].period) // Check if elapsed time is completed
             {
