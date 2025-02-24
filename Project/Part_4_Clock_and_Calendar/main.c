@@ -36,7 +36,7 @@ int main( void )
     Sche.tick = TICK_VAL;
     Sche.tasks = TASKS_N;
     Sche.taskPtr = tasks;
-    Sche.timeout = 10000;
+    Sche.timeout = 999999;
     HIL_SCHEDULER_InitScheduler( &Sche );
     /*register two task with thier corresponding init fucntions and their periodicyt, 100ms and 500ms*/
     HIL_SCHEDULER_RegisterTask( &Sche, Init_500ms, Task_500ms, 500 );

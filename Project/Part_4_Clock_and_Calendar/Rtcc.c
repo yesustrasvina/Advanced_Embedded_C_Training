@@ -155,5 +155,5 @@ uint8_t AppRtcc_getAlarmFlag( AppRtcc_Rtcc *rtcc )
 
 void AppRtcc_periodicTask( AppRtcc_Rtcc *rtcc )
 {
-
+    rtcc->tm_sec++;
 }
