@@ -63,8 +63,8 @@ void Init_500ms(void)
 void Init_1000ms(void)
 {
     AppRtcc_clockInit( &rtccClock );
-    AppRtcc_setTime( &rtccClock, 12, 30, 0 );
-    AppRtcc_setDate( &rtccClock, 24, 6, 1984 );
+    AppRtcc_setTime( &rtccClock, 23, 59, 58 );
+    AppRtcc_setDate( &rtccClock, 31, 12, 1984 );
     printf("Init task 1000 millisecond\n");
 }
 /**
