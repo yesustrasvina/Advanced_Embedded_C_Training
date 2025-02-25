@@ -4,6 +4,10 @@ This repository contains the **Advanced Embedded C Training**, which covers fund
 
 ![Embedded C training banner](https://github.com/yesustrasvina/Advanced-Embedded-C-Training/blob/main/Images/Advance_Embedded_C.png)
 
+Date: *February 2025*
+
+- The [**Certificate and Badge**]() are available.
+
 ## Table of Contents
 - [Introduction](#introduction)
 - [Training Topics](#training-topics)
