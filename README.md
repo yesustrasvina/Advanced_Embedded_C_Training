@@ -2,6 +2,8 @@
 
 This repository contains the **Advanced Embedded C Training**, which covers fundamental and advanced topics in embedded software development by [Modular MX](https://www.linkedin.com/company/modular-mx/). 
 
+![Embedded C training banner](https://github.com/yesustrasvina/Advanced-Embedded-C-Training/blob/main/Images/Advance_Embedded_C.png)
+
 ## Table of Contents
 - [Introduction](#introduction)
 - [Training Topics](#training-topics)
@@ -9,7 +11,7 @@ This repository contains the **Advanced Embedded C Training**, which covers fund
 - [Environment Setup](#environment-setup)
 - [Building the Project](#building-the-project)
 - [Project Execution](#project-execution)
-- [Acknowledgments](#acknowledgments)
+- [Evidences](#evidences)
 
 ## Introduction
 This training is designed for embedded software engineers aiming to enhance their skills in **C programming** for embedded systems. The exercises and project focus on practical applications, ensuring a hands-on learning experience.
@@ -17,41 +19,52 @@ This training is designed for embedded software engineers aiming to enhance thei
 ## Training Topics
 This repository covers the following key topics:
 
-### 1. Structured Programs
-   - Understanding program flow and modular programming principles.
+### 1. Introduction
+   - Introduction to C with basic concepts as variables, format specifiers, inputs and outputs.
 
-### 2. Program Control
-   - Conditional statements, loops, and state machines.
+### 2. Structured Programs
+   - Exercises to practice if statements, loops and logical operators.
 
-### 3. Password State Machine
-   - Implementing a simple password authentication system using state machines.
+### 3. Program Control
+   - Practice for loops and switch statements.
 
-### 4. Functions
-   - Function prototypes, recursion, and passing arguments by value and reference.
+### 4. Password State Machine
+   - Design a program to read a password following state machine diagram.
 
-### 5. Bits and Bytes (with Unit Testing)
+### 5. Functions
+   - All about functions. Function prototypes, arguments, and return statement.
+
+### 6. Bits and Bytes (with Unit Testing)
    - Bitwise operations, masks, and writing testable embedded code.
 
-### 6. Arrays, Pointers, and Structures
-   - Dynamic memory management, pointer arithmetic, and data structures.
+### 7. Arrays
+   - Arrays in C, array of strings, string library.
+
+### 8. Pointers
+   - Memory addresses, pointer notation, pointers in functions, array with pointers.
+
+### 9. Structures
+   - C structs, typedef word, array of structs access to structure members and functions with structures.
 
 ## Project Components
 This training includes various project modules, progressively building toward a complete embedded system.
 
 ### 1. Circular Buffer
-   - Implementation of a circular buffer for efficient data storage and retrieval.
+   - Implementation of a circular buffer for efficient reading and writing data.
+   ![Circular buffer]()
 
 ### 2. Queue Implementation
-   - Creating a queue for inter-process communication between tasks.
+   - Basically, Queues are the same as circular buffers but this time with a small modification Queues shall be able to handle any type of data from 8-bit variables to any     kind of structure.  The use of void pointers and the memcpy function from the standard library can help us create queues that can handle any type of element. In this way, we can create waiting queues that store any type of element with a single algorithm.
 
 ### 3. Scheduler
-   - Task scheduling with periodic execution support.
+   - Every task or process we have in our programs should have been designed to run with a predefined periodicity, this is a must for a real-life program, and timing is an important asset to keep in mind when we design our programs. It is desired to have an algorithm to set each task periodicity and ensure each run according to the time established. The Scheduler is the part of the program in charge to accomplish such objective, the most common version of this scheduler is the round robin, which means each task will run after the other with no preemption.
+   Taking as reference a scheduler made by Profesor Fran Vahid [RIOS Scheduler](https://www.cs.ucr.edu/~vahid/rios/)
 
 ### 4. Scheduler with Software Timers
-   - Extending the scheduler with software timers to handle timed tasks.
+   - The scheduler should have an interface to register task-independent software timers. the software timer shall be decremented down to zero during the scheduler tick and should have the possibility to call a pre-registered callback function. Once its count reaches zero the timer decrement must stop, to later be restarted again by the application in case necessary.
 
 ### 5. Real-Time Clock Control (RTCC)
-   - Managing a real-time clock and using it to schedule and store time-based data.
+   - Managing a real-time clock and using it to schedule and store time-based data with option to set alarm.
 
 ## Environment Setup
 To work on this project, install the following tools:
@@ -91,15 +104,14 @@ yay -S visual-studio-code-bin
 ```
 
 ## Building the Project
-Ensure all project files are in a single directory:
 ```
 project/
     queue.h
     queue.c
     scheduler.h
     scheduler.c
-    rtcc.h
-    rtcc.c
+    Rtcc.h
+    Rtcc.c
     main.c
     makefile
 ```
@@ -116,13 +128,10 @@ $ make
 ./main.exe
 Init task 500 millisecond
 Init task 1000 millisecond
-Time - 12:30:1
-Date - 24/6/1984
+Time - 23:59:58
+Date - 31/12/1984
 ...
 ```
 
-## Acknowledgments
-Special thanks to **Modular MX** for providing high-quality embedded software training.
+## Evidences
 
----
-This repository is a hands-on approach to mastering **Advanced Embedded C**. Contributions and feedback are welcome!
