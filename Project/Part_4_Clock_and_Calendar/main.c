@@ -58,7 +58,7 @@ void Init_500ms(void)
  * @brief   Init task for 1000ms task
  * 
  * Print a message to the console to indicate that the task is running
- * and init the clock to 12:30:00 24/6/1984
+ * and init the clock to 23:59:58 31/12/1984
 */
 void Init_1000ms(void)
 {

@@ -23,7 +23,6 @@
     MsgToWrite.msg  = 1;
     MsgToWrite.value = 100U;
     HIL_QUEUE_WriteData( &Queue, &MsgToWrite );
-    printf("");
     // Write message
     MsgToWrite.msg  = 2;
     MsgToWrite.value = 200U;
