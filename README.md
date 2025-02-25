@@ -51,7 +51,7 @@ This training includes various project modules, progressively building toward a 
 
 ### 1. Circular Buffer
    - Implementation of a circular buffer for efficient reading and writing data.
-   ![Circular buffer]()
+   ![Circular buffer](https://github.com/yesustrasvina/Advanced-Embedded-C-Training/blob/main/Images/Circular%20buffer.png)
 
 ### 2. Queue Implementation
    - Basically, Queues are the same as circular buffers but this time with a small modification Queues shall be able to handle any type of data from 8-bit variables to any     kind of structure.  The use of void pointers and the memcpy function from the standard library can help us create queues that can handle any type of element. In this way, we can create waiting queues that store any type of element with a single algorithm.
