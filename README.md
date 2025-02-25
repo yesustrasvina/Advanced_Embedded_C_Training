@@ -135,3 +135,17 @@ Date - 31/12/1984
 
 ## Evidences
 
+### 1. Circular Buffer
+![Circular Buffer](https://github.com/yesustrasvina/Advanced-Embedded-C-Training/blob/main/Images/Evidence_Circular_Buffer.png)
+
+### 2. Queue Buffer
+![Queue Buffer](https://github.com/yesustrasvina/Advanced-Embedded-C-Training/blob/main/Images/Evidence_Queue_Buffer.png)
+
+### 3. Scheduler
+![Scheduler](https://github.com/yesustrasvina/Advanced-Embedded-C-Training/blob/main/Images/Evidence_Scheduler.png)
+
+### 4. Scheduler with software timers
+![Scheduler with Software Timers](https://github.com/yesustrasvina/Advanced-Embedded-C-Training/blob/main/Images/Evidence_Software_Timers.png)
+
+### 5. Project with Real Time Clock and Calendar
+![Project with Real Time Clock and Calendar](https://github.com/yesustrasvina/Advanced-Embedded-C-Training/blob/main/Images/Evidence_Clock_and_Calendar.png)
