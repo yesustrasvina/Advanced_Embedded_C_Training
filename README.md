@@ -140,7 +140,7 @@ Use the provided **Makefile** to compile and run the project:
 make
 ```
 
-![Makefile_evidence]()
+![Makefile_evidence](https://github.com/yesustrasvina/Advanced-Embedded-C-Training/blob/main/Images/Makefile_evidence.png)
 
 ## Project Execution
 
