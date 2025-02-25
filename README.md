@@ -12,7 +12,7 @@ This repository contains the **Advanced Embedded C Training**, which covers fund
 - [Acknowledgments](#acknowledgments)
 
 ## Introduction
-This training is designed for embedded software engineers aiming to enhance their skills in **C programming** for embedded systems. The exercises focus on practical applications, ensuring a hands-on learning experience.
+This training is designed for embedded software engineers aiming to enhance their skills in **C programming** for embedded systems. The exercises and project focus on practical applications, ensuring a hands-on learning experience.
 
 ## Training Topics
 This repository covers the following key topics:
