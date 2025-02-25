@@ -14,9 +14,13 @@ This repository contains the **Advanced Embedded C Training**, which covers fund
 - [Evidences](#evidences)
 
 ## Introduction
+_<-- Back to [Table of Contents](#table-of-contents)_  
+
 This training is designed for embedded software engineers aiming to enhance their skills in **C programming** for embedded systems. The exercises and project focus on practical applications, ensuring a hands-on learning experience.
 
 ## Training Topics
+_<-- Back to [Table of Contents](#table-of-contents)_  
+
 This repository covers the following key topics:
 
 ### 1. Introduction
@@ -45,6 +49,8 @@ This repository covers the following key topics:
 
 ### 9. Structures
    - C structs, typedef word, array of structs access to structure members and functions with structures.
+
+![Training tree]()
 
 ## Project Components
 This training includes various project modules, progressively building toward a complete embedded system.
