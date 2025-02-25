@@ -143,7 +143,6 @@ _<-- Back to [Table of Contents](#table-of-contents)_
 Running `make` compiles all files and executes the program:
 ```sh
 $ make
-./main.exe
 Init task 500 millisecond
 Init task 1000 millisecond
 Time - 23:59:58
