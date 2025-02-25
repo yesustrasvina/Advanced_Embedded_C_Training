@@ -7,7 +7,7 @@ This repository contains the **Advanced Embedded C Training**, which covers fund
 Date: *February 2025*
 
 - The [**Certificate and Badge**](https://www.acreditta.com/credential/06da5ecd-b786-4714-82cc-be489e87cfe4) are available.
-![Badge]()
+![Advanced Embbedded C Training Badge](https://github.com/yesustrasvina/Advanced_Embedded_C_Training/blob/main/Images/Embedded_C_Badge.png)
 
 ## Table of Contents
 - [Introduction](#introduction)
