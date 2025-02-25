@@ -124,7 +124,7 @@ yay -S visual-studio-code-bin
 _<-- Back to [Table of Contents](#table-of-contents)_
 
 ```
-project/
+Project/
     queue.h
     queue.c
     scheduler.h
