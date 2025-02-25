@@ -50,9 +50,12 @@ This repository covers the following key topics:
 ### 9. Structures
    - C structs, typedef word, array of structs access to structure members and functions with structures.
 
-![Training tree]()
+![Training tree](https://github.com/yesustrasvina/Advanced-Embedded-C-Training/blob/main/Images/Training_tree.png)
 
 ## Project Components
+
+_<-- Back to [Table of Contents](#table-of-contents)_
+
 This training includes various project modules, progressively building toward a complete embedded system.
 
 ### 1. Circular Buffer
@@ -73,10 +76,13 @@ This training includes various project modules, progressively building toward a 
    - Managing a real-time clock and using it to schedule and store time-based data with option to set alarm.
 
 ## Environment Setup
+
+_<-- Back to [Table of Contents](#table-of-contents)_
+
 To work on this project, install the following tools:
 
 ### Linux System
-We recommend using **Manjaro Linux** or any Arch-based Linux distribution. Install essential development tools:
+**Manjaro Linux** or any Arch-based Linux distribution. Install essential development tools:
 
 First, install the linux base devel package
 ```sh
@@ -110,6 +116,9 @@ yay -S visual-studio-code-bin
 ```
 
 ## Building the Project
+
+_<-- Back to [Table of Contents](#table-of-contents)_
+
 ```
 project/
     queue.h
@@ -128,6 +137,9 @@ make
 ```
 
 ## Project Execution
+
+_<-- Back to [Table of Contents](#table-of-contents)_
+
 Running `make` compiles all files and executes the program:
 ```sh
 $ make
@@ -140,6 +152,8 @@ Date - 31/12/1984
 ```
 
 ## Evidences
+
+_<-- Back to [Table of Contents](#table-of-contents)_
 
 ### 1. Circular Buffer
 ![Circular Buffer](https://github.com/yesustrasvina/Advanced-Embedded-C-Training/blob/main/Images/Evidence_Circular_Buffer.png)
